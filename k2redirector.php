@@ -19,8 +19,6 @@ class plgSystemK2redirector extends JPlugin {
 		$this->app    = JFactory::getApplication();
 		$this->db     = JFactory::getDBO();
 		$this->doc    = JFactory::getDocument();
-		$this->task   = JRequest::getWord('task');
-		$this->option = JRequest::getCmd('option');
 	}
 
 	function onAfterRoute() {
@@ -29,9 +27,11 @@ class plgSystemK2redirector extends JPlugin {
 			return TRUE;
 		}
 
-		if ($this->option === "com_k2") {
+		if (JRequest::getCmd('option') === "com_k2") {
 
-			switch ($this->task) {
+			$task   = JRequest::getWord('task');
+
+			switch ($task) {
 
 				case 'category' :
 
@@ -76,11 +76,12 @@ class plgSystemK2redirector extends JPlugin {
 		$query = 'SELECT ' . $this->db->nameQuote('link') . '
               FROM ' . $this->db->nameQuote('#__menu') . '
               WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id) . '
-              AND ' . $this->db->nameQuote('published') . ' = 1 ';
+              AND ' . $this->db->nameQuote('published') . ' = 1
+              ';
 
 		$this->db->setQuery($query);
 		$link = $this->db->loadResult();
 
-		return $link . '&Itemid=' . $id;
+		return JRoute::_($link . '&Itemid=' . $id);
 	}
 }
