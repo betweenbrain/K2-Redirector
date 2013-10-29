@@ -16,9 +16,9 @@ class plgSystemK2redirector extends JPlugin {
 	function plgSystemK2redirector(&$subject, $params) {
 		parent::__construct($subject, $params);
 
-		$this->app    = JFactory::getApplication();
-		$this->db     = JFactory::getDBO();
-		$this->doc    = JFactory::getDocument();
+		$this->app = JFactory::getApplication();
+		$this->db  = JFactory::getDBO();
+		$this->doc = JFactory::getDocument();
 	}
 
 	function onAfterRoute() {
@@ -29,7 +29,7 @@ class plgSystemK2redirector extends JPlugin {
 
 		if (JRequest::getCmd('option') === "com_k2") {
 
-			$task   = JRequest::getWord('task');
+			$task = JRequest::getWord('task');
 
 			switch ($task) {
 
@@ -76,8 +76,7 @@ class plgSystemK2redirector extends JPlugin {
 		$query = 'SELECT ' . $this->db->nameQuote('link') . '
               FROM ' . $this->db->nameQuote('#__menu') . '
               WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id) . '
-              AND ' . $this->db->nameQuote('published') . ' = 1
-              ';
+              AND ' . $this->db->nameQuote('published') . ' = 1';
 
 		$this->db->setQuery($query);
 		$link = $this->db->loadResult();
