@@ -6,7 +6,7 @@
  * Author     Matt Thomas
  * Website    http://betweenbrain.com
  * Email      matt@betweenbrain.com
- * Support    https://github.com/betweenbrain/
+ * Support    https://github.com/betweenbrain/K2-Redirector/issues
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
  * License    GNU GPL v3 or later
  */
@@ -29,42 +29,47 @@ class plgSystemK2redirector extends JPlugin {
 
 		if (JRequest::getCmd('option') === "com_k2") {
 
-			$task = JRequest::getWord('task');
+			$categoryRedirect = $this->params->get('categoryRedirect');
+			$dateRedirect     = $this->params->get('dateRedirect');
+			$searchRedirect   = $this->params->get('searchRedirect');
+			$tagRedirect      = $this->params->get('tagRedirect');
+			$task             = JRequest::getWord('task');
+			$userRedirect     = $this->params->get('userRedirect');
 
-			switch ($task) {
+			switch (TRUE) {
 
-				case 'category' :
+				case ($task === 'category' && $categoryRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
-					header('Location: ' . $this->getUrl($this->params->get('categoryRedirect')));
+					header('Location: ' . $this->getUrl($categoryRedirect));
 
 					break;
 
-				case 'user' :
+				case ($task === 'user' && $userRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
-					header('Location: ' . $this->getUrl($this->params->get('userRedirect')));
+					header('Location: ' . $this->getUrl($userRedirect));
 
 					break;
 
-				case 'tag' :
+				case ($task === 'tag' && $tagRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
-					header('Location: ' . $this->getUrl($this->params->get('tagRedirect')));
+					header('Location: ' . $this->getUrl($tagRedirect));
 
 					break;
 
-				case 'search' :
+				case ($task === 'search' && $searchRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
-					header('Location: ' . $this->getUrl($this->params->get('searchRedirect')));
+					header('Location: ' . $this->getUrl($searchRedirect));
 
 					break;
 
-				case 'date' :
+				case ($task === 'date' && $dateRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
-					header('Location: ' . $this->getUrl($this->params->get('dateRedirect')));
+					header('Location: ' . $this->getUrl($dateRedirect));
 
 					break;
 			}

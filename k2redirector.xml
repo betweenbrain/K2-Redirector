@@ -8,10 +8,10 @@
 	<creationDate>October 28, 2013</creationDate>
 	<copyright>2013 Matt Thomas</copyright>
 	<license>GPL 2.0</license>
-	<authorEmail></authorEmail>
+	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://www.betweenbrain.com</authorUrl>
 	<version>0.1</version>
-	<description></description>
+	<description>A simple plugin to selectively redirect K2 views to menu items.</description>
 
 	<files>
 		<filename plugin="k2redirector">k2redirector.php</filename>
