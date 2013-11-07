@@ -78,12 +78,16 @@ class plgSystemK2redirector extends JPlugin {
 
 	private function getUrl($id) {
 
-		$query = 'SELECT ' . $this->db->nameQuote('link') . '
-              FROM ' . $this->db->nameQuote('#__menu') . '
-              WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id) . '
-              AND ' . $this->db->nameQuote('published') . ' = 1';
+		$query = $this->db->getQuery(TRUE);
+
+		$query
+			->select($this->db->quoteName('link'))
+			->from($this->db->quoteName('#__menu'))
+			->where($this->db->quoteName('id') . ' = ' . $this->db->quote($id)
+				. ' AND ' . $this->db->quoteName('published') . ' = 1');
 
 		$this->db->setQuery($query);
+
 		$link = $this->db->loadResult();
 
 		return JRoute::_($link . '&Itemid=' . $id);
