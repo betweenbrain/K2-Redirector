@@ -27,28 +27,28 @@
 				<field name="categoryRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORY_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 				<field name="userRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_USER_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 				<field name="tagRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_TAG_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 				<field name="searchRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_SEARCH_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 				<field name="dateRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_DATE_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 			</fieldset>
 		</fields>
 	</config>
