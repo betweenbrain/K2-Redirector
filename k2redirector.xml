@@ -11,7 +11,7 @@
 	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://www.betweenbrain.com</authorUrl>
 	<version>0.1</version>
-	<description>A simple plugin to selectively redirect K2 views to menu items.</description>
+	<description>PLG_SYSTEM_K2_REDIRECTOR_DESC</description>
 
 	<files>
 		<filename plugin="k2redirector">k2redirector.php</filename>
