@@ -29,27 +29,37 @@
 				       type="menuitem"
 				       default=""
 				       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORY_VIEW_LABEL"
-				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="userRedirect"
 				       type="menuitem"
 				       default=""
 				       label="PLG_SYSTEM_K2_REDIRECTOR_USER_VIEW_LABEL"
-				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="tagRedirect"
 				       type="menuitem"
 				       default=""
 				       label="PLG_SYSTEM_K2_REDIRECTOR_TAG_VIEW_LABEL"
-				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="searchRedirect"
 				       type="menuitem"
 				       default=""
 				       label="PLG_SYSTEM_K2_REDIRECTOR_SEARCH_VIEW_LABEL"
-				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="dateRedirect"
 				       type="menuitem"
 				       default=""
 				       label="PLG_SYSTEM_K2_REDIRECTOR_DATE_VIEW_LABEL"
-				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>
