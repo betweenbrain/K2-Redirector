@@ -2,6 +2,13 @@ K2 Redirector
 =============
 A simple Joomla plugin to perform a 301 redirect, en mass, of selected K2 views to the corresponding selected menu item. This plugin helps minimize exposure of unwanted automatically generated views, such as author pages,  with K2.
 
+The non-SEF URLs for these views are:
+  `index.php?option=com_k2&task=category` for the category view, Categories menu type
+  `index.php?option=com_k2&task=user` for the user view, User page (blog) menu type
+  `index.php?option=com_k2&task=tag` for the tag view, Tag menu type
+  `index.php?option=com_k2&task=search` forthe search view, search results URLs in Advancded SEF Settings
+  `index.php?option=com_k2&task=date` for the date view, date listings URLs in Advancded SEF Settings
+
 Questions, problems, feature suggestions?
 =============
 Awesome! By all means, please create an [issue](https://github.com/betweenbrain/K2-Redirector/issues).
