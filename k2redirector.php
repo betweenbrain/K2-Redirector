@@ -86,6 +86,6 @@ class plgSystemK2redirector extends JPlugin {
 		$this->db->setQuery($query);
 		$link = $this->db->loadResult();
 
-		return JRoute::_($link . '&Itemid=' . $id);
+		return JRoute::_($link . '&Itemid=' . $id, false);
 	}
 }
