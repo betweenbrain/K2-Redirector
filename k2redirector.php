@@ -34,25 +34,26 @@ class plgSystemK2redirector extends JPlugin {
 			$searchRedirect   = $this->params->get('searchRedirect');
 			$tagRedirect      = $this->params->get('tagRedirect');
 			$task             = JRequest::getWord('task');
+			$layout           = JRequest::getWord('layout');
 			$userRedirect     = $this->params->get('userRedirect');
 
 			switch (TRUE) {
 
-				case ($task === 'category' && $categoryRedirect) :
+				case ($layout === 'category' && $categoryRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
 					header('Location: ' . $this->getUrl($categoryRedirect));
 
 					break;
 
-				case ($task === 'user' && $userRedirect) :
+				case ($layout === 'user' && $userRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
 					header('Location: ' . $this->getUrl($userRedirect));
 
 					break;
 
-				case ($task === 'tag' && $tagRedirect) :
+				case ($layout === 'tag' && $tagRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
 					header('Location: ' . $this->getUrl($tagRedirect));
