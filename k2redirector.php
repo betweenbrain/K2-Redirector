@@ -46,7 +46,7 @@ class plgSystemK2redirector extends JPlugin {
 
 					break;
 
-				case ($layout === 'user' && $userRedirect) :
+				case ($task === 'user' && $userRedirect) :
 
 					header('HTTP/1.1 301 Moved Permanently');
 					header('Location: ' . $this->getUrl($userRedirect));
