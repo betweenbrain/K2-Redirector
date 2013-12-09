@@ -11,7 +11,7 @@
 	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://www.betweenbrain.com</authorUrl>
 	<version>0.1</version>
-	<description>A simple plugin to selectively redirect K2 views to menu items.</description>
+	<description>PLG_SYSTEM_K2_REDIRECTOR_DESC</description>
 
 	<files>
 		<filename plugin="k2redirector">k2redirector.php</filename>
@@ -19,34 +19,35 @@
 
 	<languages>
 		<language tag="en-GB">en-GB.plg_system_k2redirector.ini</language>
+		<language tag="en-GB">en-GB.plg_system_k2redirector.sys.ini</language>
 	</languages>
 
 	<params>
 		<param name="categoryRedirect"
 		       type="menuitem"
 		       default=""
-		       label="Select category redirect"
-		       description=""/>
+		       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORY_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 		<param name="userRedirect"
 		       type="menuitem"
 		       default=""
-		       label="Select user redirect"
-		       description=""/>
+		       label="PLG_SYSTEM_K2_REDIRECTOR_USER_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 		<param name="tagRedirect"
 		       type="menuitem"
 		       default=""
-		       label="Select tag redirect "
-		       description=""/>
+		       label="PLG_SYSTEM_K2_REDIRECTOR_TAG_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 		<param name="searchRedirect"
 		       type="menuitem"
 		       default=""
-		       label="Select search redirect"
-		       description=""/>
+		       label="PLG_SYSTEM_K2_REDIRECTOR_SEARCH_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 		<param name="dateRedirect"
 		       type="menuitem"
 		       default=""
-		       label="Select date redirect"
-		       description=""/>
+		       label="PLG_SYSTEM_K2_REDIRECTOR_DATE_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
 	</params>
 
 	<config>
@@ -55,30 +56,41 @@
 				<field name="categoryRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORY_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="userRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_USER_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="tagRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_TAG_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="searchRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_SEARCH_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 				<field name="dateRedirect"
 				       type="menuitem"
 				       default=""
-				       label="Select a menu item"
-				       description="Select a menu item"/>
+				       label="PLG_SYSTEM_K2_REDIRECTOR_DATE_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
+					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>
+
 
 </install>
