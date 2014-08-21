@@ -7,13 +7,14 @@
  * Website    http://betweenbrain.com
  * Email      matt@betweenbrain.com
  * Support    https://github.com/betweenbrain/K2-Redirector/issues
- * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
- * License    GNU GPL v3 or later
+ * Copyright  Copyright (C) 2013-2014 betweenbrain llc. All Rights Reserved.
+ * License    GNU GPL v2 or later
  */
+class plgSystemK2redirector extends JPlugin
+{
 
-class plgSystemK2redirector extends JPlugin {
-
-	function plgSystemK2redirector(&$subject, $params) {
+	function plgSystemK2redirector(&$subject, $params)
+	{
 		parent::__construct($subject, $params);
 
 		$this->app = JFactory::getApplication();
@@ -21,24 +22,37 @@ class plgSystemK2redirector extends JPlugin {
 		$this->doc = JFactory::getDocument();
 	}
 
-	function onAfterRoute() {
+	function onAfterRoute()
+	{
 
-		if ($this->app->isAdmin()) {
-			return TRUE;
+		if ($this->app->isAdmin())
+		{
+			return true;
 		}
 
-		if (JRequest::getCmd('option') === "com_k2") {
+		if (JRequest::getCmd('option') === "com_k2")
+		{
 
+			$categories       = $this->params->get('categories');
 			$categoryRedirect = $this->params->get('categoryRedirect');
 			$dateRedirect     = $this->params->get('dateRedirect');
+			$itemRedirect     = $this->params->get('itemRedirect');
 			$searchRedirect   = $this->params->get('searchRedirect');
 			$tagRedirect      = $this->params->get('tagRedirect');
 			$task             = JRequest::getWord('task');
 			$userRedirect     = $this->params->get('userRedirect');
+			$view             = JRequest::getWord('view');
 
-			switch (TRUE) {
+			// Ensure that categories is always an array
+			if (!is_array($categories))
+			{
+				$categories = str_split($categories, strlen($categories));
+			}
 
-				case ($task === 'category' && $categoryRedirect) :
+			switch (true)
+			{
+
+				case ($task === 'category' && in_array(JRequest::getVar('id'), $categories)) :
 
 					header('HTTP/1.1 301 Moved Permanently');
 					header('Location: ' . $this->getUrl($categoryRedirect));
@@ -72,11 +86,29 @@ class plgSystemK2redirector extends JPlugin {
 					header('Location: ' . $this->getUrl($dateRedirect));
 
 					break;
+
+				case($view === 'item') :
+
+					if (in_array($this->getItemCategory(), $categories))
+					{
+						header('HTTP/1.1 301 Moved Permanently');
+						header('Location: ' . $this->getUrl($itemRedirect));
+					}
+
+					break;
 			}
 		}
 	}
 
-	private function getUrl($id) {
+	/**
+	 * Gets the link associated with a menu item
+	 *
+	 * @param $id
+	 *
+	 * @return mixed
+	 */
+	private function getUrl($id)
+	{
 
 		$query = 'SELECT ' . $this->db->nameQuote('link') . '
               FROM ' . $this->db->nameQuote('#__menu') . '
@@ -87,5 +119,23 @@ class plgSystemK2redirector extends JPlugin {
 		$link = $this->db->loadResult();
 
 		return JRoute::_($link . '&Itemid=' . $id, false);
+	}
+
+	/**
+	 * Method to get a K2 item's category
+	 *
+	 * @return mixed
+	 */
+	private function getItemCategory()
+	{
+		$id = JRequest::getVar('id', '', 'get', 'INT');
+
+		$query = 'SELECT ' . $this->db->nameQuote('catid') . '
+		              FROM ' . $this->db->nameQuote('#__k2_items') . '
+		              WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id);
+
+		$this->db->setQuery($query);
+
+		return $this->db->loadResult();
 	}
 }

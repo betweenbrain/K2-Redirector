@@ -22,36 +22,46 @@
 		<language tag="en-GB">en-GB.plg_system_k2redirector.sys.ini</language>
 	</languages>
 
-	<params>
+	<params addpath="/administrator/components/com_k2/elements">
 		<param name="categoryRedirect"
 		       type="menuitem"
 		       default=""
 		       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORY_VIEW_LABEL"
-		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
 		<param name="userRedirect"
 		       type="menuitem"
 		       default=""
 		       label="PLG_SYSTEM_K2_REDIRECTOR_USER_VIEW_LABEL"
-		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
 		<param name="tagRedirect"
 		       type="menuitem"
 		       default=""
 		       label="PLG_SYSTEM_K2_REDIRECTOR_TAG_VIEW_LABEL"
-		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
 		<param name="searchRedirect"
 		       type="menuitem"
 		       default=""
 		       label="PLG_SYSTEM_K2_REDIRECTOR_SEARCH_VIEW_LABEL"
-		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
 		<param name="dateRedirect"
 		       type="menuitem"
 		       default=""
 		       label="PLG_SYSTEM_K2_REDIRECTOR_DATE_VIEW_LABEL"
-		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC"/>
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
+		<param name="itemRedirect"
+		       type="menuitem"
+		       default=""
+		       label="PLG_SYSTEM_K2_REDIRECTOR_ITEM_VIEW_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
+		<param name="categories"
+		       type="categoriesmultiple"
+		       default="0"
+		       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORIES_LABEL"
+		       description="PLG_SYSTEM_K2_REDIRECTOR_CATEGORIES_DESC" />
 	</params>
 
 	<config>
-		<fields name="params">
+		<fields name="params" addpath="/administrator/components/com_k2/elements">
 			<fieldset name="basic">
 				<field name="categoryRedirect"
 				       type="menuitem"
@@ -88,6 +98,16 @@
 				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC">
 					<option value="">PLG_SYSTEM_K2_REDIRECTOR_NOT_REDIRECTED</option>
 				</field>
+				<field name="itemRedirect"
+				       type="menuitem"
+				       default=""
+				       label="PLG_SYSTEM_K2_REDIRECTOR_ITEM_VIEW_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_SELECT_DESC" />
+				<field name="categories"
+				       type="categoriesmultiple"
+				       default="0"
+				       label="PLG_SYSTEM_K2_REDIRECTOR_CATEGORIES_LABEL"
+				       description="PLG_SYSTEM_K2_REDIRECTOR_CATEGORIES_DESC" />
 			</fieldset>
 		</fields>
 	</config>
