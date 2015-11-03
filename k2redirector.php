@@ -110,10 +110,10 @@ class plgSystemK2redirector extends JPlugin
 	private function getUrl($id)
 	{
 
-		$query = 'SELECT ' . $this->db->nameQuote('link') . '
-              FROM ' . $this->db->nameQuote('#__menu') . '
-              WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id) . '
-              AND ' . $this->db->nameQuote('published') . ' = 1';
+		$query = 'SELECT ' . $this->db->quoteName('link') . '
+              FROM ' . $this->db->quoteName('#__menu') . '
+              WHERE ' . $this->db->quoteName('id') . ' = ' . $this->db->quote($id) . '
+              AND ' . $this->db->quoteName('published') . ' = 1';
 
 		$this->db->setQuery($query);
 		$link = $this->db->loadResult();
@@ -130,9 +130,9 @@ class plgSystemK2redirector extends JPlugin
 	{
 		$id = JRequest::getVar('id', '', 'get', 'INT');
 
-		$query = 'SELECT ' . $this->db->nameQuote('catid') . '
-		              FROM ' . $this->db->nameQuote('#__k2_items') . '
-		              WHERE ' . $this->db->nameQuote('id') . ' = ' . $this->db->quote($id);
+		$query = 'SELECT ' . $this->db->quoteName('catid') . '
+		              FROM ' . $this->db->quoteName('#__k2_items') . '
+		              WHERE ' . $this->db->quoteName('id') . ' = ' . $this->db->quote($id);
 
 		$this->db->setQuery($query);
 
